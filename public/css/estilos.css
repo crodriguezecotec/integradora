@@ -1,0 +1,306 @@
+/* Pulso Gym — identidad visual
+   Paleta: carbón profundo + duotono energía (naranja quemado / verde azulado)
+   Tipografía: sans-serif condensada de sistema, peso alto para titulares
+*/
+
+:root {
+  --bg: #15171c;
+  --surface: #1e2129;
+  --surface-2: #262a34;
+  --border: #333844;
+  --text: #eef0f3;
+  --text-muted: #9aa0ac;
+  --accent: #ff5a36;
+  --accent-dark: #d9431f;
+  --accent-2: #2ec4b6;
+  --danger: #ff4d6a;
+  --radius: 10px;
+  --font: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.5;
+}
+
+a { color: inherit; }
+
+/* ---------- Barra superior ---------- */
+.topbar {
+  background: var(--surface);
+  border-bottom: 3px solid var(--accent);
+}
+
+.topbar__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #14151a;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.brand__text strong {
+  display: block;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+}
+
+.brand__text small {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.topnav {
+  display: flex;
+  gap: 22px;
+}
+
+.topnav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.topnav a:hover {
+  color: var(--text);
+  border-color: var(--accent-2);
+}
+
+/* ---------- Layout general ---------- */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+.page-head h1 {
+  font-size: 1.7rem;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.page-head p {
+  color: var(--text-muted);
+  margin: 0 0 28px;
+}
+
+/* ---------- Tarjeta / formulario ---------- */
+.tarjeta {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.form-registro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.campo input,
+.campo select {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: none;
+  border-color: var(--accent-2);
+}
+
+.campo__error {
+  min-height: 16px;
+  color: var(--danger);
+  font-size: 0.78rem;
+}
+
+/* el botón de enviar ocupa las dos columnas */
+.form-registro > button {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: 6px;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-block;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 22px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.boton--primario {
+  background: var(--accent);
+  color: #14151a;
+}
+
+.boton--primario:hover { background: var(--accent-dark); }
+
+.boton--secundario {
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.boton--peligro {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+.boton--peligro:hover {
+  background: var(--danger);
+  color: #14151a;
+}
+
+/* ---------- Alertas ---------- */
+.alerta {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+}
+
+.alerta--exito {
+  background: rgba(46, 196, 182, 0.12);
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+}
+
+.alerta--error {
+  background: rgba(255, 77, 106, 0.12);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* ---------- Búsqueda ---------- */
+.form-busqueda {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-busqueda input {
+  flex: 1;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--text);
+  font-family: inherit;
+}
+
+/* ---------- Tabla ---------- */
+.tabla-wrap { padding: 0; overflow-x: auto; }
+
+.tabla-socios {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.tabla-socios th {
+  text-align: left;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 12px 14px;
+}
+
+.tabla-socios td {
+  padding: 12px 14px;
+  border-top: 1px solid var(--border);
+}
+
+.tabla-socios tr:hover td { background: rgba(255, 255, 255, 0.02); }
+
+.tabla-vacia {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 28px !important;
+}
+
+.etiqueta {
+  display: inline-block;
+  background: rgba(255, 90, 54, 0.14);
+  color: var(--accent);
+  border-radius: 6px;
+  padding: 3px 9px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  padding: 24px;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 620px) {
+  .form-registro { grid-template-columns: 1fr; }
+  .topbar__inner { flex-direction: column; align-items: flex-start; }
+}
