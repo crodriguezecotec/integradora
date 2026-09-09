@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const membresia = document.getElementById('tipo_membresia').value;
     const fechaInicio = document.getElementById('fecha_inicio').value;
 
-    // Nombre: obligatorio y longitud mínima
+    // Nombre: obligatorio 
     if (nombre === '') {
       mostrarError('error-nombre', 'El nombre es obligatorio.');
       esValido = false;
